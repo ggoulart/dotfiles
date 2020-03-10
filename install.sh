@@ -58,3 +58,9 @@ brew cask install jetbrains-toolbox
 #ssh
 echo -e "\n#Add SSH key to the ssh-agent" >> ~/.zshrc
 echo -e 'eval "$(ssh-agent -s)"' >> ~/.zshrc
+
+#git alias
+git config --global alias.st status
+
+#install tig
+brew install tig
