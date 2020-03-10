@@ -36,7 +36,7 @@ asdf global golang 1.14
 
 #install java
 asdf plugin add java
-echo -e ".\n# set java home based on asdf"
+echo -e ".\n# set java home based on asdf" >> ~/.zshrc
 echo -e ". ~/.asdf/plugins/java/set-java-home.sh" >> ~/.zshrc
 
 #install node
