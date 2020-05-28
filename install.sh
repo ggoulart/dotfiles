@@ -9,25 +9,35 @@ brew cask install firefox
 
 #install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo -e "\n# Configuring Completions in zsh" >> ~/.zshrc
-echo -e "if type brew &>/dev/null; then
+echo "\n# Configuring Completions in zsh" >> ~/.zshrc
+echo "if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:\$FPATH
 
   autoload -Uz compinit
   compinit
 fi" >> ~/.zshrc
 
+#git alias
+git config --global alias.st status
+
+#install tig
+brew install tig
+
 #install vim awesome version
 cd ~
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
+#ssh
+echo "\n#Add SSH key to the ssh-agent" >> ~/.zshrc
+echo 'eval "$(ssh-agent -s)"' >> ~/.zshrc
+
 #install asdf
 brew install asdf
-echo -e "\n# asdf" >> ~/.zshrc
-echo -e "# add asdf" >> ~/.zshrc
-echo -e ". $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
-echo -e ". $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.zshrc
+echo "\n# asdf" >> ~/.zshrc
+echo "# add asdf" >> ~/.zshrc
+echo ". $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+echo ". $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.zshrc
 
 #install golang
 asdf plugin add golang
@@ -36,8 +46,8 @@ asdf global golang 1.14
 
 #install java
 asdf plugin add java
-echo -e "\n# set java home based on asdf" >> ~/.zshrc
-echo -e ". ~/.asdf/plugins/java/set-java-home.sh" >> ~/.zshrc
+echo "\n# set java home based on asdf" >> ~/.zshrc
+echo ". ~/.asdf/plugins/java/set-java-home.sh" >> ~/.zshrc
 
 #install node
 brew install coreutils
@@ -50,18 +60,8 @@ asdf install nodejs 10.19.0
 asdf plugin add direnv
 asdf install direnv latest
 asdf global direnv 2.21.2
-echo -e "\n# direnv" >> ~/.zshrc
-echo -e 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+echo "\n# direnv" >> ~/.zshrc
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 
 #install jetbrains-toolbox
 brew cask install jetbrains-toolbox
-
-#ssh
-echo -e "\n#Add SSH key to the ssh-agent" >> ~/.zshrc
-echo -e 'eval "$(ssh-agent -s)"' >> ~/.zshrc
-
-#git alias
-git config --global alias.st status
-
-#install tig
-brew install tig
