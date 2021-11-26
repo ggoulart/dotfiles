@@ -2,7 +2,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 #install iterm2
-brew cask install iterm2
+brew install --cask iterm2
 
 #install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -61,4 +61,4 @@ echo "\n# direnv" >> ~/.zshrc
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 
 #install jetbrains-toolbox
-brew cask install jetbrains-toolbox
+brew install --cask jetbrains-toolbox
