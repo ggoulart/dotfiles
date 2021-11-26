@@ -4,9 +4,6 @@
 #install iterm2
 brew cask install iterm2
 
-#install firefox
-brew cask install firefox
-
 #install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "\n# Configuring Completions in zsh" >> ~/.zshrc
