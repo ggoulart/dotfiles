@@ -44,7 +44,7 @@ asdf global golang 1.14
 #install java
 asdf plugin add java
 echo "\n# set java home based on asdf" >> ~/.zshrc
-echo ". ~/.asdf/plugins/java/set-java-home.sh" >> ~/.zshrc
+echo ". ~/.asdf/plugins/java/set-java-home.zsh" >> ~/.zshrc
 
 #install node
 brew install coreutils
