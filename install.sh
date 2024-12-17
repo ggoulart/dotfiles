@@ -1,11 +1,11 @@
 #install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #install iterm2
 brew install --cask iterm2
 
 #install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "\n# Configuring Completions in zsh" >> ~/.zshrc
 echo "if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:\$FPATH
@@ -31,27 +31,11 @@ echo 'eval "$(ssh-agent -s)"' >> ~/.zshrc
 
 #install asdf
 brew install asdf
-echo "\n# asdf" >> ~/.zshrc
-echo "# add asdf" >> ~/.zshrc
-echo ". $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
-echo ". $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.zshrc
 
 #install golang
 asdf plugin add golang
 asdf install golang latest
-asdf global golang 1.14
-
-#install java
-asdf plugin add java
-echo "\n# set java home based on asdf" >> ~/.zshrc
-echo ". ~/.asdf/plugins/java/set-java-home.zsh" >> ~/.zshrc
-
-#install node
-brew install coreutils
-brew install gpg
-asdf plugin add nodejs
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 10.19.0
+asdf global golang 1.23.4
 
 #install direnv
 asdf plugin add direnv
